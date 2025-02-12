@@ -1,5 +1,7 @@
 # exasoft-coding-challenge
 
+Solutions to each of the questions provided are located in the numbered `cpp` files in `src/`. Answers to questions are presented in-line in the relevant file.
+
 ## System Requirements
 
 - `C++14`
