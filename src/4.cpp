@@ -6,15 +6,23 @@ CShell::destroy() is called?
 
 class CShell
 {
-    static void *operator new(size_t) = delete;
-    static void *operator new[](size_t) = delete;
+private:
+    void *operator new(size_t);
+    void *operator new[](size_t);
+
+public:
+    static CShell *create()
+    {
+        static CShell s_instance;
+        return &s_instance;
+    };
 };
 
 void main()
 {
     // CShell *pShell = new CShell;       // should be disallowed by compiler
 
-    // CShell *pShell = CShell::create(); // should do what above does
+    CShell *pShell = CShell::create(); // should do what above does
 
     // // do stuff with pShell...
     // delete pShell;     // should be disallowed by compiler
