@@ -9,6 +9,8 @@ class CShell
 private:
     void *operator new(size_t);
     void *operator new[](size_t);
+    void operator delete(void *);
+    void operator delete[](void *);
 
 public:
     static CShell *create()
@@ -25,6 +27,6 @@ void main()
     CShell *pShell = CShell::create(); // should do what above does
 
     // // do stuff with pShell...
-    // delete pShell;     // should be disallowed by compiler
+    // delete pShell; // should be disallowed by compiler
     // CShell::destroy(); // should deallocate memory allocated in create call
 }
