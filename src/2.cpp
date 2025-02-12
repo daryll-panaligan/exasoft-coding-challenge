@@ -46,4 +46,11 @@ int main()
         pShapeArray[j] = new Rectangle;
     for (int k = 0; k < t + r; k++)
         pShapeArray[k]->draw();
+
+    // Delete allocated objects
+    for (int k = 0; k < t + r; k++)
+        delete pShapeArray[k];
+
+    // Delete allocated pointers array
+    delete pShapeArray;
 }
