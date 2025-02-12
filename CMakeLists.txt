@@ -11,9 +11,9 @@ project(exasoft-coding-challenge)
 
 set(SOURCES
     src/1.cpp
-    src/2.cpp
-    src/3.cpp
-    src/4.cpp
+    # src/2.cpp
+    # src/3.cpp
+    # src/4.cpp
 )
 
 add_executable(Exasoft ${SOURCES})
