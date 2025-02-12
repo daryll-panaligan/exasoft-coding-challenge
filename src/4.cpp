@@ -4,12 +4,16 @@
 CShell::destroy() is called?
 */
 
+class CShell
+{
+};
+
 void main()
 {
-    CShell *pShell = new CShell;       // should be disallowed by compiler
-    CShell *pShell = CShell::create(); // should do what above does
+    // CShell *pShell = new CShell;       // should be disallowed by compiler
+    // CShell *pShell = CShell::create(); // should do what above does
 
-    // do stuff with pShell...
-    delete pShell;     // should be disallowed by compiler
-    CShell::destroy(); // should deallocate memory allocated in create call
+    // // do stuff with pShell...
+    // delete pShell;     // should be disallowed by compiler
+    // CShell::destroy(); // should deallocate memory allocated in create call
 }
