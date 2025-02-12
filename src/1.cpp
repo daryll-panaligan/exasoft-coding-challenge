@@ -3,12 +3,34 @@
     Please implement these three classes.
 */
 
+#include <string>
+#include <iostream>
+
 class Animal
 {
-    virtual void eat() = 0;
+public:
+    virtual std::string eat() const = 0;
 };
 
-void main()
+class Dog : public Animal
+{
+public:
+    std::string eat() const
+    {
+        return "Eats bone";
+    }
+};
+
+class Cat : public Animal
+{
+public:
+    std::string eat() const
+    {
+        return "Eats fish";
+    }
+};
+
+int main()
 {
     Dog dog;
     Cat cat;
@@ -16,7 +38,7 @@ void main()
     // Animal animal; // i want the compiler to disallow this
 
     Animal *pAnimal = &dog;
-    cout << pAnimal->eat(); // expected output is "Eats bone"
+    std::cout << pAnimal->eat(); // expected output is "Eats bone"
     pAnimal = &cat;
-    cout << pAnimal->eat(); // expected output is "Eats fish"
+    std::cout << pAnimal->eat(); // expected output is "Eats fish"
 }
