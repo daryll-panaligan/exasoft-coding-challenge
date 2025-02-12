@@ -2,6 +2,9 @@
 2.  The below code has memory leaks. Please make the necessary modifications to the main()
     function and the Triangle, Rectangle and Shape classes to rectify the leaks.
 */
+
+#include <iostream>
+
 class Shape
 {
 protected:
@@ -10,6 +13,7 @@ protected:
 public:
     virtual void draw() = 0;
 };
+
 class Rectangle : public Shape
 {
 private:
@@ -18,6 +22,7 @@ private:
 public:
     virtual void draw() { /*draws a rectangle*/ }
 };
+
 class Triangle : public Shape
 {
 private:
@@ -26,13 +31,14 @@ private:
 public:
     virtual void draw() { /*draws a triangle*/ }
 };
-void main()
+
+int main()
 {
     int t, r;
-    cout << "Enter number of triangles";
-    cin >> t;
-    cout << "Enter number of rectangles";
-    cin >> r;
+    std::cout << "Enter number of triangles";
+    std::cin >> t;
+    std::cout << "Enter number of rectangles";
+    std::cin >> r;
     Shape **pShapeArray = new Shape *[t + r];
     for (int i = 0; i < t; i++)
         pShapeArray[i] = new Triangle;
