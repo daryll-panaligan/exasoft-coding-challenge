@@ -7,14 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(exasoft-coding-challenge)
 
-# Compile main application
-
-set(SOURCES
-    src/1.cpp
-    # src/2.cpp
-    # src/3.cpp
-    # src/4.cpp
-)
-
-add_executable(Exasoft ${SOURCES})
+# Compile
+add_executable(1 src/1.cpp)
+add_executable(2 src/2.cpp)
 
