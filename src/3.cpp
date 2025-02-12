@@ -16,6 +16,9 @@ private:
 };
 void main()
 {
+    // Will originally throw an error since Point does not have a default constructor
+    // Point p1;
+
     Point p1;
     Point p2(1.0, 2.0, 3.0);
     Point p3 = p1;
