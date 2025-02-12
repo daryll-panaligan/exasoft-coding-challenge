@@ -8,16 +8,24 @@ class Point
 {
 public:
     Point(double x, double y, double z) : m_x(x), m_y(y), m_z(z) {}
+
+    // ANSWER: create default constructor which zero-initializes members
     Point() : m_x(0), m_y(0), m_z(0) {}
+    Point(const Point &a)
+    {
+        // ANSWER: copy x and y values only
+        m_x = a.m_x;
+        m_y = a.m_y;
+    }
 
 private:
     double m_x;
     double m_y;
     double m_z;
 };
-void main()
+int main()
 {
-    // Will originally throw an error since Point does not have a default constructor
+    // ANSWER: Will originally throw an error since Point does not have a default constructor
     // Point p1;
 
     Point p1;
